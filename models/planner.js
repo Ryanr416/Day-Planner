@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const planners = require('../controllers/planners');
 const Schema = mongoose.Schema;
 
 
@@ -18,6 +19,7 @@ const commentsSchema = new Schema({
 
 
 const plannerSchema = new mongoose.Schema({
+    
     title: { type: String, required: true },
     date: {
       type: Number,
@@ -38,11 +40,5 @@ const plannerSchema = new mongoose.Schema({
   module.exports = mongoose.model('planner', plannerSchema);
 
 
-  module.exports = {
-    create
-  }
 
-  function create(planners) {
-    planner.id = Date.now() % 1000000;
-    planners.push(planner)
-  }
+
