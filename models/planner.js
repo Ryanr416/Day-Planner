@@ -36,3 +36,13 @@ const plannerSchema = new mongoose.Schema({
   
   // Compile the schema into a model and export it
   module.exports = mongoose.model('planner', plannerSchema);
+
+
+  module.exports = {
+    create
+  }
+
+  function create(planners) {
+    planner.id = Date.now() % 1000000;
+    planners.push(planner)
+  }
