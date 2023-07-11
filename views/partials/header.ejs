@@ -15,9 +15,9 @@
   <nav>
 
     <% if (user) { %>
-      <a href="../planners/new">ADD PLANS</a>
-      <a href="/logout">LOG OUT</a>
-      <a href="/">ALL PLANS</a>
+      <button class="button1" onclick="window.location.href='../planners/new';">ADD PLANS</a></button>
+      <button class="button2" onclick="window.location.href='/logout';">LOG OUT</a></button>
+      <button class="button3" onclick="window.location.href='/';">ALL PLANS</a></button>
       <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;</a>
       <% } %>
