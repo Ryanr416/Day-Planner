@@ -17,6 +17,27 @@
 		<input type="text" name="title" placeholder="Enter new plans here">
 		<button>Add a plan</button>
 	</form>
+
+
+
+
+  <form id="new-form" action="/planners" method="POST">
+    <label>Title:</label>
+    <input type="text" name="title" placeholder="Enter new plans here"> 
+    <label>Date: </label>
+    <input type="date" name="time">
+    <label>Time: </label>
+    <select name="time">
+      <option value="10:30">10:30</option>
+      <option value="11:00">11:00</option>
+      <option value="11:30">11:30</option>
+      <option value="12:00">12:00</option>
+    </select>
+  
+    <input type="submit" value="Add Appointment">
+  </form>
+
+
 </body>
 </html>
   <%- include('../partials/footer') %>

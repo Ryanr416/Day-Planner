@@ -26,7 +26,9 @@ const plannerSchema = new mongoose.Schema({
       default: function() {
         return new Date().getFullYear();
       },
-      min: 1927
+      time: {
+        type: Number
+      }
     },
 
     comments: [commentsSchema],// using embedding to create the relationship
