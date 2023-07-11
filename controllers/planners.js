@@ -1,10 +1,16 @@
+
 const PlannerModel = require('../models/planner');
 
 
-module.export = {
-    index: index
+module.exports = {
+    index,
+
 };
 
+
+
 function index(req, res, next) {
-    res.render('/planner/index', {planner: PlannerModel.getAll()})
+    res.render('planners/index.ejs')
 }
+
+

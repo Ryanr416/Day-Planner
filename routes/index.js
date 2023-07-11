@@ -8,16 +8,16 @@ res.render('index', {title: 'Day Planner'});
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
-  'google',
-  { scope: ['profile', 'email'] }
+  'google', 
+  { scope: ['profile', 'email'], prompt: 'select_account' }
 ));
 
 // Google OAuth callback route
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/', // UPDATE THIS, where do you want the client to go after you login 
-    failureRedirect : '/' //  UPDATE THIS, where do you want the client to go if login fails
+    successRedirect : '/planner', // UPDATE THIS, where do you want the client to go after you login 
+    failureRedirect : '/planner' //  UPDATE THIS, where do you want the client to go if login fails
   }
 ));
 

@@ -19,24 +19,17 @@ const commentsSchema = new Schema({
 
 const plannerSchema = new mongoose.Schema({
     title: { type: String, required: true },
-    Date: {
+    date: {
       type: Number,
       default: function() {
         return new Date().getFullYear();
       },
       min: 1927
     },
-    // Cast is an array of Id's that reference the Performer model
-    // Many to Many Relationship
-    cast: [{type: mongoose.Schema.Types.ObjectId, ref: 'Performer'}],
-    // This creates a one (Movie) has many (Reviews) relationship
-    // a review belongs to a movie
-    Comments: [commentsSchema],// using embedding to create the relationship
-    mpaaRating: {
-      type: String,
-      enum: ['G', 'PG', 'PG-13', 'R']
-    },
-    nowShowing: { type: Boolean, default: true }
+
+    comments: [commentsSchema],// using embedding to create the relationship
+  
+
   }, {
     timestamps: true
   });
