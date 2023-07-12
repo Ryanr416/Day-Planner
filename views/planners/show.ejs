@@ -13,7 +13,7 @@
   <h2>Comments</h2>
 
   <% if (user) { %>
-    <form id="add-comments-form" method="POST" action="/planners/<%= plans._id %>">
+    <form id="add-comments-form" method="POST" action='/planners/<%= plans._id %>/comment'>
       <label>Comments:</label>
       <textarea name="content"></textarea>
       <select name="comments">
@@ -37,12 +37,12 @@
               </tr>
             </thead>
             <tbody>
-              <% planner.comments.forEach(function(c) { %>
+              <% plans.comments.forEach(function(c) { %>
                 <tr>
                   <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
                   <td><%= c.createdAt.toLocaleDateString() %></td>
                   <td>
-                    <%= c.createdAt.toLocaleDateString() %>
+                    
                   </td>
                   <td>
                     <%= c.content %>

@@ -1,4 +1,4 @@
-const PlannerModel = require('../models/movie');
+const PlannerModel = require('../models/planner');
 
 module.exports = {
 	create
@@ -36,7 +36,7 @@ async function create(req, res){
 		// Then respond to the client!
 		console.log(plansFromTheDb)
 		// what do you have access too that has the movie id?
-		res.redirect(`/planners${req.params.id}`)
+		res.redirect(`/planners/${req.params.id}`)
 
 	} catch(err){
 		res.send(err)
