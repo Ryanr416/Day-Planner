@@ -7,14 +7,19 @@ module.exports = {
     new: newPlanner,
     create,
     show
+    
 
 
 };
 
 
 
-function index(req, res, next) {
-    res.render('planners/index.ejs')
+async function index(req, res) {
+  const plans = await PlannerModel.find({});
+  console.log(plans);
+  res.render("planners/index", { title: "All Plans", plans: plans });
+
+ 
 }
 
 function newPlanner(req, res) {
@@ -22,31 +27,31 @@ res.render('planners/new', { title: 'Add Plans', errorMsg: ''});
 
 }
 
+
 async function show(req, res) {
-    console.log(req.user)
-  
-    try {
-  
+  console.log(req.user)
 
-      const plansFromTheDatabase = await PlannerModel
-        .findById(req.params.id)
-        .exec();
-  
-                                    
-  
-      console.log(plansFromTheDatabase);
+  try {
 
-  
-      res.render("planners/show", {
-        plans: plansFromTheDatabase,
-      });
-    } catch (err) {
-      res.send(err);
-    }
+
+    const plansFromTheDatabase = await PlannerModel
+     .findById(req.params.id)
+
+
+                                  
+
+    console.log(plansFromTheDatabase);
+
+ 
+   
+    res.render("planners/show", {
+      plans: plansFromTheDatabase,
+     
+    });
+  } catch (err) {
+    res.send(err);
   }
-  
-
-
+}
 
 
 
@@ -58,3 +63,4 @@ function create(req, res) {
 
     PlannerModel.create(req.body)
     }
+

@@ -6,10 +6,10 @@ const plannerCtrl = require ('../controllers/planners');
 
  router.get('/', plannerCtrl.index);
 
-router.get('planners/:id', plannerCtrl.show)
+router.get('/new', plannerCtrl.new);
 
- router.get('/new', plannerCtrl.new);
+ router.get('/:id', plannerCtrl.show);
 
- router.post('/', plannerCtrl.create)
+ router.post('/', plannerCtrl.create);
 
 module.exports = router;

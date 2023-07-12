@@ -20,6 +20,23 @@
 }
 
 .button1 {
+  right: 10px;
+  margin-top: 2px;
+  border-radius: 5px;
+  background-color: white;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  font-family: "Ostrich Sans";
+  font-size: 15px;
+  color: black;
+  line-height: 33px;
+  transition: 0.7s;
+}
+
+
+.button2 {
+
   position: absolute;
   right: 10px;
   margin-top: 2px;
@@ -34,4 +51,20 @@
   line-height: 33px;
   transition: 0.7s;
   justify-content: flex-end;
+
+}
+
+.button3 {
+  margin-top: 2px;
+  border-radius: 5px;
+  background-color: white;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  font-family: "Ostrich Sans";
+  font-size: 15px;
+  color: black;
+  line-height: 33px;
+  transition: 0.7s;
+
 }

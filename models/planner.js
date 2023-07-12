@@ -3,12 +3,22 @@ const planners = require('../controllers/planners');
 const Schema = mongoose.Schema;
 
 
+module.exports = {
+  getOne
+}
+
+
+
+
+
+
+
 const commentsSchema = new Schema({
     content: {
       type: String,
       required: true
     },
- // 1 to many, A review belongs to a User!
+ 
     user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
     userName: String,
     userAvatar: String
@@ -38,6 +48,13 @@ const plannerSchema = new mongoose.Schema({
     timestamps: true
   });
   
+
+
+function getOne(id) {
+  return planners.find(planner => planner.id === parseInt(id));
+  
+}
+
   // Compile the schema into a model and export it
   module.exports = mongoose.model('planner', plannerSchema);
 
