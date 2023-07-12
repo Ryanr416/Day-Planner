@@ -7,11 +7,26 @@ module.exports = {
     new: newPlanner,
     create,
     show,
-    delete: deletePlans
-    
+    delete: deletePlans,
+    update
 
 
 };
+
+async function update(req, res) {
+  const updateplans = await PlannerModel.findOneAndUpdate({_id: req.params.id, userRecommending: req.user._id},
+    req.body,
+    {new: true},
+    function(err, PlannerModel) {
+      if (err || !book) return res.redirect('/planners');
+      res.redirect(`/planners/${PlannerModel._id}`);
+  
+    })}
+
+
+
+
+
 
 async function deletePlans(req, res){
 const deleteplans = await PlannerModel.findOneAndDelete(req.params.id)

@@ -1,20 +1,26 @@
 const PlannerModel = require('../models/planner');
 
 module.exports = {
-	create
+	create,
+    edit
 }
+
+
+async function edit(req, res) {
+const editPlans = await PlannerModel.findOne({_id: req.params.id, userRecommending: req.user_id}, function(err, PlannerModel){
+    if (err || !PlannerModel) return res.redirect ('/planners');
+    res.render('planners/edit', {PlannerModel});
+})
+
+}
+
+
+
 
 
 async function create(req, res){
 
-	// Take the contents of the form and create a review
-
-	// 1. Find the movie we want to add the review too.
-	    // What information do we have the identifys the movie? req.params.id 
-	  //2. Talk to the database to go find that movie, 
-		//   What talks to the Movies in the database? MovieModel
-		// What method on the movieModel can find something by an id? findById
-	  // What variable is the Contents of the form? req.body <- represent a Review
+	
 	console.log(req.body)
 	try {
 
