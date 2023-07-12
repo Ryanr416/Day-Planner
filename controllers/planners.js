@@ -6,13 +6,18 @@ module.exports = {
     index,
     new: newPlanner,
     create,
-    show
+    show,
+    delete: deleteOne
     
 
 
 };
 
+function deleteOne(req, res){
+PlannerModel.deleteOne(req.params.id)
+res.redirect('/planners')
 
+}
 
 async function index(req, res) {
   const plans = await PlannerModel.find({});

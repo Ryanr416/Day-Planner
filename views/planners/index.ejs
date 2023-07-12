@@ -3,8 +3,8 @@
 <table id="list">
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Release<br>Year</th>
+        <th>Plans</th>
+       
         <th></th>
       </tr>
     </thead>
@@ -12,9 +12,13 @@
       <% plans.forEach(function(p) { %>
         <tr>
           <td><%= p.title %></td>
-          <td><%= p.releaseYear %></td>
+        
           <td><a href="/planners/<%= p._id %>">DETAILS</a></td>
         </tr>
+        <form method="POST" action="/planners/<%= p.id%>?_method=DELETE">
+            <button type="submit">X</button>
+          </form>
+        </li>
         <% }); %>
       </tbody>
     

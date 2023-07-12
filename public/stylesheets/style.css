@@ -68,3 +68,10 @@
   transition: 0.7s;
 
 }
+
+#show-page {
+
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}

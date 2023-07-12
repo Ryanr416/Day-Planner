@@ -4,10 +4,13 @@ const Schema = mongoose.Schema;
 
 
 module.exports = {
-  getOne
+  deleteOne
 }
 
-
+function deleteOne(id) {
+  const idx = planners.findIndex(planner => planner.id === parseInt(id));
+  planners.splice(idx, 1);
+}
 
 
 
@@ -50,10 +53,7 @@ const plannerSchema = new mongoose.Schema({
   
 
 
-function getOne(id) {
-  return planners.find(planner => planner.id === parseInt(id));
-  
-}
+
 
   // Compile the schema into a model and export it
   module.exports = mongoose.model('planner', plannerSchema);
