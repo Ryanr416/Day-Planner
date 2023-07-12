@@ -3,14 +3,6 @@ const planners = require('../controllers/planners');
 const Schema = mongoose.Schema;
 
 
-module.exports = {
-  deleteOne
-}
-
-function deleteOne(id) {
-  const idx = planners.findIndex(planner => planner.id === parseInt(id));
-  planners.splice(idx, 1);
-}
 
 
 
@@ -37,15 +29,17 @@ const plannerSchema = new mongoose.Schema({
     date: {
       type: Number,
       default: function() {
-        return new Date().getFullYear();
+        return new Date().getDate();
+
       },
       time: {
-        type: Number
+        type: Number,
       }
     },
 
     comments: [commentsSchema],// using embedding to create the relationship
-  
+    title: { type: String, required: true},
+    
 
   }, {
     timestamps: true

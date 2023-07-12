@@ -7,8 +7,53 @@
   <div> <%= plans.date%> </div>
   <div> Time: </div>
   <div><%= plans.time%> </div>
-  
-</section>
+  </section>
 
+  <br><br>
+  <h2>Comments</h2>
+
+  <% if (user) { %>
+    <form id="add-comments-form" method="POST" action="/planners/<%= plans._id %>">
+      <label>Comments:</label>
+      <textarea name="content"></textarea>
+      <select name="comments">
+
+      <input type="submit" value="Add Comment">
+    </form>
+    <% } else { %>
+      <p>Please Login to leave a comment</p>
+    <% } %>
+
+
+        <!-- // Create a list of reviews here -->
+        <% if (plans.comments.length) { %>
+          <table>
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Date</th>
+                <th>Comment</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <% planner.comments.forEach(function(c) { %>
+                <tr>
+                  <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+                  <td><%= c.createdAt.toLocaleDateString() %></td>
+                  <td>
+                    <%= c.createdAt.toLocaleDateString() %>
+                  </td>
+                  <td>
+                    <%= c.content %>
+                  </td>
+                </tr>
+                <% }); %>
+            </tbody>
+          </table>
+          <% } else { %>
+            <h5>No Comments Yet</h5>
+            <% } %>
+              <%- include('../partials/footer') %>
 
 <%- include('../partials/footer') %>

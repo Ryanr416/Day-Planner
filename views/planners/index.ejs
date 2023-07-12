@@ -16,7 +16,7 @@
           <td><a href="/planners/<%= p._id %>">DETAILS</a></td>
         </tr>
         <form method="POST" action="/planners/<%= p.id%>?_method=DELETE">
-            <button type="submit">X</button>
+            <button type="submit" class ="deletebutton">Delete</button>
           </form>
         </li>
         <% }); %>

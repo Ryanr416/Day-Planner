@@ -7,14 +7,14 @@ module.exports = {
     new: newPlanner,
     create,
     show,
-    delete: deleteOne
+    delete: deletePlans
     
 
 
 };
 
-function deleteOne(req, res){
-PlannerModel.deleteOne(req.params.id)
+async function deletePlans(req, res){
+const deleteplans = await PlannerModel.findOneAndDelete(req.params.id)
 res.redirect('/planners')
 
 }
