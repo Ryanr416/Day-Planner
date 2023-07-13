@@ -27,13 +27,13 @@ const plannerSchema = new mongoose.Schema({
     
     title: { type: String, required: true },
     date: {
-      type: Number,
+      type: String,
       default: function() {
         return new Date().getDate();
 
       },
       time: {
-        type: Number,
+        type: String,
       }
     },
 

@@ -14,12 +14,21 @@ module.exports = {
 
 };
 // function to edit plans
-async function edit(req, res) {
-	const editPlans = await PlannerModel.findOne({_id: req.params.id, userRecommending: req.user_id}, function(err, PlannerModel){
-		if (err || !PlannerModel) return res.redirect ('/planners');
-		res.render('planners/edit', {PlannerModel});
-	})
+ // async function edit(req, res) {
+ // const editPlans = await PlannerModel.findOne({_id: req.params.id, userRecommending: req.user_id}, function(err, PlannerModel){
+ 	//	if (err || !PlannerModel) return res.redirect ('/planners');
+	//	res.render('planners/edit', {PlannerModel});
+	// })
 
+ // }
+async function edit(req, res) {
+  // Note the cool "dot" syntax to query on the property of a subdoc
+ const planner = await PlannerModel.findOne({'_id': req.params.id})
+    // Find the comment subdoc using the id method on Mongoose arrays
+    // https://mongoosejs.com/docs/subdocs.html
+    // Render the comments/edit.ejs template, passing to it the comment
+    res.render('planners/edit', {planner});
+ 
 }
 
 // function to update anything edited to the DB
@@ -44,7 +53,7 @@ res.redirect('/planners')
 async function index(req, res) {
   const plans = await PlannerModel.find({});
   console.log(plans);
-  res.render("planners/index", { title: "All Plans", plans: plans });
+  res.render("planners/index", { title: 'All Plans', plans: plans });
 
  
 }
