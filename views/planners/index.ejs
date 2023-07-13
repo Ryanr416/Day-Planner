@@ -23,7 +23,7 @@
             <button type="submit" class ="deletebutton">Delete</button>
           </form>
           <form method="POST" action="/planners/edit/<%= p.id%>?_method=POST">
-            <button type="submit" class="edit-button" onclick="window.location.href='/planners/edit/';">Edit Plans</a></button>
+            <button type="submit" class="edit-button" onclick="window.location.href='/:id/edit/';">Edit Plans</a></button>
     </form>
         </li>
         <% }); %>

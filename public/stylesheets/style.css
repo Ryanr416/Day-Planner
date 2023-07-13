@@ -132,6 +132,7 @@ background-image: url('https://2.bp.blogspot.com/-Rd1RXJbIVEA/WEHSOjP-5fI/AAAAAA
 background-repeat: no-repeat;
 background-size: cover;
 height: 100%;
+
 }
 
 
@@ -162,7 +163,7 @@ margin-left: -300px;
 font-size: 45px;
 position: absolute;
 margin-top: 50px;
-margin-left: -300px;
+margin-left: -306px;
 
 
 
@@ -207,6 +208,7 @@ background-image: url('https://www.mkgifs.com/wp-content/uploads/2022/09/GIF-Nat
 background-repeat: no-repeat;
 background-size: cover;
 height: 100%;
+
 }
 
 .planner-title {
@@ -253,10 +255,12 @@ justify-content: center;
   font-size: 23px;
   padding-left: 50px;
   font-weight: bolder;
-  color:
+  
 }
 
 .planners-title  {
+display:flex;
+justify-content: center;
 font-size: 33px;
 font-style: serif;
 }
@@ -273,9 +277,6 @@ font-style: serif;
   color: black;
   line-height: 33px;
   transition: 0.7s;
-  display: flex;
-  position: absolute;
-  margin-top: -236px;
-  margin-left: 100px;
 
 }
+

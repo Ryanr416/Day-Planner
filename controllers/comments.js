@@ -18,7 +18,7 @@ async function create(req, res){
 	try {
 
 		const plansFromTheDb = await PlannerModel.findById(req.params.id)
-		// I could check my code make sure I'm finding the movie
+		
 		
 		// Add the logged in user properties to req.body!
 		req.body.user = req.user._id
@@ -27,14 +27,14 @@ async function create(req, res){
 		
 
 
-		// add the review (req.body) to the movie (movieFromTheDb) we found from the db
+		// add the review (req.body) to the plans (plansFromTheDb) we found from the db
 		plansFromTheDb.comments.push(req.body);
-		// since I changed a document (movieFromTheDb) (I mutated it)
+		// since I changed a document (plansFromTheDb) 
 		// I have to tell mongodb that, so we have to save
 		await plansFromTheDb.save();
 		// Then respond to the client!
 		console.log(plansFromTheDb)
-		// what do you have access too that has the movie id?
+		// redirect to the ID of planners
 		res.redirect(`/planners/${req.params.id}`)
 
 	} catch(err){

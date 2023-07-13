@@ -13,7 +13,7 @@ module.exports = {
    
 
 };
-
+// function to edit plans
 async function edit(req, res) {
 	const editPlans = await PlannerModel.findOne({_id: req.params.id, userRecommending: req.user_id}, function(err, PlannerModel){
 		if (err || !PlannerModel) return res.redirect ('/planners');
@@ -22,7 +22,7 @@ async function edit(req, res) {
 
 }
 
-
+// function to update anything edited to the DB
 async function update(req, res) {
   const updateplans = await PlannerModel.findOneAndUpdate({_id: req.params.id, userRecommending: req.user._id},
     req.body,
@@ -34,13 +34,13 @@ async function update(req, res) {
     })}
 
 
-
+// function to delete the plans
 async function deletePlans(req, res){
 const deleteplans = await PlannerModel.findOneAndDelete(req.params.id)
 res.redirect('/planners')
 
 }
-
+// function to display all plans
 async function index(req, res) {
   const plans = await PlannerModel.find({});
   console.log(plans);
@@ -48,13 +48,13 @@ async function index(req, res) {
 
  
 }
-
+// function to add a new plan
 function newPlanner(req, res) {
 res.render('planners/new', { title: 'Add Plans', errorMsg: ''});
 
 }
 
-
+// function to show plans form the DB
 async function show(req, res) {
   console.log(req.user)
 
@@ -80,7 +80,7 @@ async function show(req, res) {
   }
 }
 
-
+// function to create a new plan
 
 function create(req, res) {
     console.log(req.body, " <_ contents of our form");

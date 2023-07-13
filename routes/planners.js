@@ -14,7 +14,7 @@ const plannerCtrl = require ('../controllers/planners');
 
  router.delete('/:id', plannerCtrl.delete);
 
- router.get('/:id', plannerCtrl.edit);
+ router.get('/:id/edit', plannerCtrl.edit);
 
  router.put('/planners/:id', plannerCtrl.update);
 
