@@ -8,10 +8,20 @@ module.exports = {
     create,
     show,
     delete: deletePlans,
+    edit,
     update
-
+   
 
 };
+
+async function edit(req, res) {
+	const editPlans = await PlannerModel.findOne({_id: req.params.id, userRecommending: req.user_id}, function(err, PlannerModel){
+		if (err || !PlannerModel) return res.redirect ('/planners');
+		res.render('planners/edit', {PlannerModel});
+	})
+
+}
+
 
 async function update(req, res) {
   const updateplans = await PlannerModel.findOneAndUpdate({_id: req.params.id, userRecommending: req.user._id},
@@ -22,9 +32,6 @@ async function update(req, res) {
       res.redirect(`/planners/${PlannerModel._id}`);
   
     })}
-
-
-
 
 
 

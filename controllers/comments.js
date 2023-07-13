@@ -1,18 +1,11 @@
 const PlannerModel = require('../models/planner');
 
 module.exports = {
-	create,
-    edit
+	create
 }
 
 
-async function edit(req, res) {
-const editPlans = await PlannerModel.findOne({_id: req.params.id, userRecommending: req.user_id}, function(err, PlannerModel){
-    if (err || !PlannerModel) return res.redirect ('/planners');
-    res.render('planners/edit', {PlannerModel});
-})
 
-}
 
 
 
