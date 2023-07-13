@@ -16,7 +16,7 @@ async function connectDB() {
 
   } catch (err) {
     console.log("err");
-    console.log(err, ' connecting to mongodb')
+    console.log(err, ' connecting to mongodb');
     process.exit(1);
   }
 }

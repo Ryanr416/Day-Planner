@@ -33,7 +33,7 @@ const plannerSchema = new mongoose.Schema({
 
       },
       time: {
-        type: String,
+        type: Number,
       }
     },
 

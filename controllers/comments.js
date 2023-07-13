@@ -33,9 +33,9 @@ async function create(req, res){
 		// I have to tell mongodb that, so we have to save
 		await plansFromTheDb.save();
 		// Then respond to the client!
-		console.log(plansFromTheDb)
+		console.log(plansFromTheDb);
 		// redirect to the ID of planners
-		res.redirect(`/planners/${req.params.id}`)
+		res.redirect(`/planners/${req.params.id}`);
 
 	} catch(err){
 		res.send(err)

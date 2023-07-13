@@ -33,16 +33,21 @@ async function edit(req, res) {
 
 // function to update anything edited to the DB
 async function update(req, res) {
-  const updateplans = await PlannerModel.findOneAndUpdate({_id: req.params.id, userRecommending: req.user._id},
-    req.body,
-    {new: true},
-    function(err, PlannerModel) {
-      if (err || !book) return res.redirect('/planners');
-      res.redirect(`/planners/${PlannerModel._id}`);
+  console.log('update')
+  try {
+ await PlannerModel.findOneAndUpdate({_id: req.params.id}, req.body,  {new: true})
+ res.redirect(`/planners/${req.params.id}`);
+  }
   
-    })}
 
+catch (err){
+        if (err || !book) return res.redirect('/planners');
+    
+  
+    }
 
+ 
+}
 // function to delete the plans
 async function deletePlans(req, res){
 const deleteplans = await PlannerModel.findOneAndDelete(req.params.id)

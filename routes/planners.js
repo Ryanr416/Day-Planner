@@ -16,6 +16,6 @@ const plannerCtrl = require ('../controllers/planners');
 
  router.get('/:id/edit', plannerCtrl.edit);
 
- router.put('/planners/:id', plannerCtrl.update);
+ router.put('/:id', plannerCtrl.update);
 
 module.exports = router;
