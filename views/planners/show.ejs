@@ -1,16 +1,18 @@
-<%- include('../partials/header') %>
-
+<div class="bg-container">
+  <%- include('../partials/header') %>
 <section id="show-page">
-  <div>Plans: </div>  <div> <%= plans.title %> </div>
+  <div class="title-plans">Plans: </div>
+   <div class="title-plans2"> <%= plans.title %> </div>
 
-  <div>Date: </div>
-  <div> <%= plans.date%> </div>
-  <div> Time: </div>
-  <div><%= plans.time%> </div>
+  <div class="date">Date: </div>
+  <div class="date-number"> <%= plans.date%> </div>
+  <div class="time"> Time: </div>
+  <div class="timeNum"><%= plans.time%> </div>
   </section>
 
   <br><br>
-  <h2>Comments</h2>
+
+  <h2 class="title-comment">Comment Section</h2>
 
   <% if (user) { %>
     <form id="add-comments-form" method="POST" action='/planners/<%= plans._id %>/comment'>
@@ -52,8 +54,8 @@
             </tbody>
           </table>
           <% } else { %>
-            <h5>No Comments Yet</h5>
+            <h5 class="no-comments">No Comments Yet</h5>
             <% } %>
-              <%- include('../partials/footer') %>
-
+          
+        </div>
 <%- include('../partials/footer') %>

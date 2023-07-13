@@ -1,9 +1,11 @@
+<div class="planners-bg">
+
 <%- include('../partials/header') %>
 
 <table id="list">
     <thead>
       <tr>
-        <th>Plans</th>
+        <div class="planner-title">Plans</div>
        
         <th></th>
       </tr>
@@ -11,9 +13,11 @@
     <tbody>
       <% plans.forEach(function(p) { %>
         <tr>
-          <td><%= p.title %></td>
+          
+          <td class="planners-title"><%= p.title %></td>
         
-          <td><a href="/planners/<%= p._id %>">DETAILS</a></td>
+          <td class="details"><a href="/planners/<%= p._id %>">DETAILS</a></td>
+        </div>
         </tr>
         <form method="POST" action="/planners/<%= p.id%>?_method=DELETE">
             <button type="submit" class ="deletebutton">Delete</button>
@@ -25,3 +29,4 @@
     </table>
     
 <%- include('../partials/footer') %>
+</div>

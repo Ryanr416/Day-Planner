@@ -1,3 +1,7 @@
+<div class="new-page">
+
+
+
 <%- include('../partials/header') %>
 
 <!DOCTYPE html>
@@ -9,11 +13,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> New Plans</h1>
+    <h1 class="new-plans-title"> New Plans</h1>
 
 
 
-
+<div class="new-form">
   <form id="new-form" action="/planners" method="POST">
     <label>New Appointment:</label>
     <input type="text" name="title" placeholder="Enter new plans here"> 
@@ -29,8 +33,9 @@
   
     <input type="submit" value="Add Appointment">
   </form>
-
+</div>
 
 </body>
 </html>
   <%- include('../partials/footer') %>
+</div>

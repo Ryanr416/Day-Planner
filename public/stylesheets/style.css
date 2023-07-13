@@ -69,17 +69,7 @@
 
 }
 
-#show-page {
-
-  display: flex;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
-  
-}
-
-
-.deletebutton {
-
+.button4 {
   margin-top: 2px;
   border-radius: 5px;
   background-color: white;
@@ -91,4 +81,176 @@
   color: black;
   line-height: 33px;
   transition: 0.7s;
+
+}
+
+#show-page {
+
+  display: flex;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  justify-content: center;
+  
+}
+
+
+.deletebutton {
+  display: flex;
+
+  border-radius: 5px;
+  background-color: white;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  font-family: "Ostrich Sans";
+  font-size: 15px;
+  color: black;
+  line-height: 33px;
+  transition: 0.7s;
+  
+}
+
+#list {
+
+  display: flex;
+  justify-content: center;
+
+}
+
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+
+ .bg-container {
+display: flex;
+flex-direction: column;
+background-image: url('https://2.bp.blogspot.com/-Rd1RXJbIVEA/WEHSOjP-5fI/AAAAAAAADks/GnRPJ40H3nUj4h7ODScozjgi_02WIKuDwCLcB/s1600/flowing-waterfall-cliff-green-nature-animated-gif.gif');
+background-repeat: no-repeat;
+background-size: cover;
+height: 100%;
+}
+
+
+ .title-comment {
+  justify-content: center;
+  position: relative;
+  padding-left: 80px;
+  font-style: italic;
+}
+
+.title-plans {
+font-size: 45px;
+display: flex;
+flex-direction: column;
+
+
+}
+
+.title-plans2 {
+
+  font-size: 37px;
+  font-weight: lighter;
+  padding-top: 7px;
+ 
+}
+
+
+.date {
+font-size: 45px;
+
+
+
+
+}
+
+
+.date-number {
+font-size: 37px;
+
+
+}
+
+
+.time {
+font-size: 45px;
+
+}
+
+
+.timeNum {
+font-size: 37px;
+
+}
+
+.no-comments {
+  font-size: 25px;
+}
+
+.homepage-bg {
+background-image: url('https://i.pinimg.com/originals/a3/ce/9e/a3ce9e7d0a9d21e27db1b7970603b11d.gif');
+background-repeat: no-repeat;
+background-size: cover;
+height: 100%;
+}
+
+.planners-bg {
+background-image: url('https://www.mkgifs.com/wp-content/uploads/2022/09/GIF-Nature-Images-Free-Download.gif');
+background-repeat: no-repeat;
+background-size: cover;
+height: 100%;
+}
+
+.planner-title {
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+  font-style: italic;
+
+}
+
+
+
+
+.guest-welcome {
+display:flex;
+justify-content: center;
+font-size: 150px;
+font-style: italic;
+
+}
+
+
+.new-page {
+background-image: url('https://i.giphy.com/l46CveUvMpayTORzi.gif');
+background-repeat: no-repeat;
+background-size: cover;
+height: 100%;
+}
+
+.new-plans-title {
+
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+}
+
+.new-form {
+display: flex;
+justify-content: center;
+
+}
+
+.details {
+  font-size: 23px;
+  padding-left: 50px;
+  font-weight: bolder;
+  color:
+}
+
+.planners-title  {
+font-size: 33px;
+font-style: serif;
 }

@@ -1,13 +1,18 @@
+
+<div class="homepage-bg">
+
+
 <%- include('./partials/header') %>
 
 
 <% if (user) { %>
-    <h3>Welcome <%= user.name %></h3>
+    <h3 class="user-welcome">Welcome <%= user.name %></h3>
    
 <% } else { %>
-    <h2>Welcome Guest</h2>
-    <a href="/auth/google" class="login">Log In</a>
+    <h2 class="guest-welcome">Welcome Guest</h2>
+   
 <% } %>
 
 
 <%- include('./partials/footer') %>
+</div>
