@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 
 
 
-
+// schema for the comments data
 
 const commentsSchema = new Schema({
     content: {
@@ -21,7 +21,7 @@ const commentsSchema = new Schema({
     timestamps: true
   });
 
-
+// schema for my plans data with the comments schema embedded
 
 const plannerSchema = new mongoose.Schema({
     

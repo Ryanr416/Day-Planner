@@ -153,7 +153,6 @@ margin-left: -300px;
 .title-plans2 {
 
   font-size: 37px;
-  font-weight: lighter;
   padding-top: 7px;
  
 }
@@ -280,3 +279,10 @@ font-style: serif;
 
 }
 
+.edit-page {
+background-image: url('https://c.tadst.com/gfx/600x337/autumn-lake.jpg?1');
+background-repeat: no-repeat;
+background-size: cover;
+height: 100%;
+
+}
